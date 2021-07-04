@@ -1,0 +1,50 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  html {
+    font-family: "Montserrat", sans-serif;
+  }
+
+  body {
+    background: floralwhite;
+    padding: 0 16px 4rem;
+  }
+
+  
+  html {
+    font-family: "Montserrat", sans-serif;
+  }
+
+img {
+    width: 400px;
+    border-radius: 10%;
+    margin: 1rem auto;
+    box-shadow: 0 2px 5px  rgba(109, 101, 101, 0.616);
+}
+h2 {
+    text-align: center;
+    margin: 2rem auto 1rem
+}
+h1 {
+    text-align: center;
+    margin: 2rem auto
+}
+div {
+    text-align: center;
+}
+
+p {
+    color: #ccc;
+}
+
+.header {
+    color: floralwhite;
+    background-color: darkslategrey;
+    margin: auto -16px 4rem;
+    padding: 16px 32px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.589);
+
+
+}

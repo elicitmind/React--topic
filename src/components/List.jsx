@@ -8,9 +8,9 @@ import React from "react";
 const List = () => {
   return (
     <ul>
-      <li>Bacon</li>
-      <li>Jamon</li>
-      <li>Noodles</li>
+      <li>PERSISTENCE</li>
+      <li>RESOLUTENESS</li>
+      <li>EAGERNESS</li>
     </ul>
   );
 };
