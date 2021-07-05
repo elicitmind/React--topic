@@ -1,28 +1,21 @@
-import React from "react"
-
-
-
-
+import React from "react";
+import Avatar from "./Avatar.jsx";
+import Detail from "./Detail.jsx";
 
 function Card(props) {
-    
+  return (
+    <div className="card">
+      <div className="top">
+      <Detail detail={props.id} />
+        <h2 className="name">{props.name}</h2>
+        <Avatar imgurl={props.imgurl} />
+      </div>
+      <div className="bottom">
+        <Detail detail={props.email} />
+        <Detail detail={props.karma} />
+      </div>
+    </div>
+  );
+}
 
-    return (
-        <div className="card">
-            <div className="top">
-                <h2 className="name">{props.name}</h2>
-                <img className="circle-img"
-                    src={props.imgurl}
-                    alt="avatar_img"
-                />
-            </div>
-            <div className="bottom">
-                <p className="info">{props.karma}</p>
-                <p className="info">{props.email}</p>
-            </div>
-        </div>
-    )}
-
-
-
-export default Card
+export default Card;
