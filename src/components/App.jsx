@@ -1,19 +1,25 @@
 import React from "react";
-import emojipedia from "../emojipedia.js"
-import EmojiCard from "./EmojiEntry.jsx"
+import LoginForm from "./LoginForm.jsx"
+
+var isLoggedIn = false
+
+const currentTime = new Date().getHours()
+
+console.log(currentTime)
+
 
 function App() {
-  return (
-    <div>
-      <h1>
-        <span>emojipedia</span>
-      </h1>
+return <div className="container">
 
-      <dl className="dictionary">
-     {emojipedia.map(props => <EmojiCard {...props} key={props.id} />)}
-      </dl>
-    </div>
-  );
-}
+
+//TERNARY
+ { isLoggedIn ? <h1>Hello</h1> : <LoginForm /> }
+
+ //AND OPERATOR
+{ (currentTime <= 10 && currentTime >=4) && <h1>Productivity Time</h1> }
+      </div>
+    
+  };
+
 
 export default App;
