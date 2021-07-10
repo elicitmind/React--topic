@@ -1,10 +1,10 @@
 import React from "react"
 import Input from "./Input.jsx"
 
-function LoginForm() {
+function LoginForm(props) {
   return (
     <div>
-      <h1>Login</h1>
+      <h1>{props.isRegistered ? "Login" : "Register"}</h1>
       <form className="form">
         <Input
           type="text"
@@ -14,7 +14,10 @@ function LoginForm() {
           type="password"
           placeholder="Password"
         />
-        <button type="submit">Login</button>
+        {!props.isRegistered && <Input
+        type="Password" placeholder="Confirm Password"
+        />}
+        <button type="submit">{props.isRegistered ? "Login" : "Register"}</button>
       </form>
     </div>
   )

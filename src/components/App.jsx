@@ -1,7 +1,8 @@
 import React from "react";
-import LoginForm from "./LoginForm.jsx"
+import Form from "./Form.jsx"
 
 var isLoggedIn = false
+var isRegistered = true
 
 const currentTime = new Date().getHours()
 
@@ -13,7 +14,7 @@ return <div className="container">
 
 
 //TERNARY
- { isLoggedIn ? <h1>Hello</h1> : <LoginForm /> }
+ { isLoggedIn ? <h1>Hello</h1> : <Form isRegistered={isRegistered} /> }
 
  //AND OPERATOR
 { (currentTime <= 10 && currentTime >=4) && <h1>Productivity Time</h1> }
