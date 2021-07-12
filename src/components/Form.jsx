@@ -1,7 +1,7 @@
 import React from "react"
 import Input from "./Input.jsx"
 
-function LoginForm(props) {
+function  Form(props) {
   return (
     <div>
       <h1>{props.isRegistered ? "Login" : "Register"}</h1>
@@ -23,4 +23,4 @@ function LoginForm(props) {
   )
 }
 
-export default LoginForm
+export default Form

@@ -1,26 +1,44 @@
-import React from "react";
-import Form from "./Form.jsx"
-
-var isLoggedIn = false
-var isRegistered = true
-
-const currentTime = new Date().getHours()
-
-console.log(currentTime)
-
+import React, { useState } from "react";
 
 function App() {
-return <div className="container">
+  const [number, setNumber] = useState(0);
 
+  function addOne() {
+    setNumber(number + 1);
+  }
 
-//TERNARY
- { isLoggedIn ? <h1>Hello</h1> : <Form isRegistered={isRegistered} /> }
+  function subtractOne() {
+    setNumber(number - 1);
+  }
 
- //AND OPERATOR
-{ (currentTime <= 10 && currentTime >=4) && <h1>Productivity Time</h1> }
-      </div>
-    
-  };
+  const [clicked, setClick] = useState(true);
 
+function strike() {
+  setClick(true);
+}
+
+function unStrike() {
+  setClick(false);
+}
+
+  
+  return (
+    <div><div>
+      <p style={clicked ? { textDecoration: "line-through" } : null}>
+        Buy milk
+      </p>
+      <button onClick={strike}>strike</button>
+      <button onClick={unStrike}>back</button>
+    </div>
+  
+  
+    <div>
+      <h1>{number}</h1>
+      <button onClick={addOne}>plus</button>
+      <button onClick={subtractOne}>minus</button>
+    </div></div>
+  
+)
+  }
 
 export default App;
