@@ -1,59 +1,61 @@
 import React, { useState } from "react";
+import ListItem from "./ListItem.jsx";
 
 function App() {
-  const [number, setNumber] = useState(0);
+  const [item, setItem] = useState("");
+  // const listItems = [];
+  const [list, setList] = useState([]);
 
-  function addOne() {
-    setNumber(number + 1);
+  function handleInput(event) {
+    setItem(event.target.value);
   }
 
-  function subtractOne() {
-    setNumber(number - 1);
+  function handleSubmit() {
+    setList([...list, item]);
+    setItem("");
+    // listItems.push(item);
+    // console.log(listItems);
+    console.log(list);
+    // return listItems;
   }
 
-  const [clicked, setClick] = useState(true);
-
-  function strike() {
-    setClick(true);
+  function handleDelete() {
+    setList(list.splice(0, list.length - 1));
   }
 
-  function unStrike() {
-    setClick(false);
+  function deleteItem(id) {
+    setList((prevItems) => {
+      console.log(prevItems);
+      return prevItems.filter((item, index) => {
+        console.log(index);
+        return index !== id;
+      });
+    });
   }
-
-  const clock = new Date().toLocaleTimeString();
-  const [time, setTime] = useState(clock);
-
-  function showTime() {
-    const newTime = new Date().toLocaleTimeString();
-    setTime(newTime);
-  }
-
-  setInterval(showTime, 1000);
-
 
   return (
-    <div>
-      
-        <h1>{time}</h1>
-        <button onClick={showTime}>Time</button>
-      
-      <div>
-        <p style={clicked ? { textDecoration: "line-through" } : null}>
-          Buy milk
-        </p>
-        <button onClick={strike}>strike</button>
-        <button onClick={unStrike}>back</button>
+    <div className="container">
+      <div className="heading">
+        <h1>I COMMIT TO</h1>
       </div>
-
-
+      <div className="form">
+        <input type="text" value={item} onChange={handleInput} />
+        <button onClick={handleSubmit}>
+          <span>Add</span>
+        </button>
+        <button onClick={handleDelete}>
+          <span>Delete</span>
+        </button>
+      </div>
       <div>
-        <h1>{number}</h1>
-        <button onClick={addOne}>plus</button>
-        <button onClick={subtractOne}>minus</button>
-      </div></div>
-
-  )
+        <ul>
+          {list.map((e, index) => (
+            <ListItem key={index} id={index} text={e} onDelete={deleteItem} />
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
 }
 
 export default App;
