@@ -13,6 +13,8 @@ function ListItem(props) {
       setClick(false);
     }, 2000);
   }
+
+  
   // const styles = { textDecoration: "line-through" };
   console.log(propsClicked);
   return (
