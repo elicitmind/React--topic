@@ -1,0 +1,20 @@
+.goal-item {
+    margin: 4px 0;
+    background: #8b005d;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    color: white;
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
+
+.goal-item:first-child {
+    border-radius: 10px 10px 0 0
+}
+
+.goal-item:last-child {
+    border-radius: 0 0 10px 10px
+}
+
+.goal-item:only-child {
+    border-radius: 10px
+}
