@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  background: #020231b6
+}
+
+body {
+  margin: 0
+  
+}
+
+p {
+  color: black;
+
+}
+
