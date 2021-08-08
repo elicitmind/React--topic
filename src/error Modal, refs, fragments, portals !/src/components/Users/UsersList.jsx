@@ -8,9 +8,7 @@ const UsersList = (props) => {
     <Card className={classes.users}>
       <ul>
         {props.data.map((e) => {
-          return (
-            <UserPoint name={e.name} age={e.age} key={e.id} />
-          );
+          return <UserPoint name={e.name} age={e.age} key={e.id} />;
         })}
       </ul>
     </Card>

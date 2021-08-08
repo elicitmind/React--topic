@@ -12,13 +12,13 @@ function App() {
     setUsersData((prevState) => {
       return [newUser, ...prevState];
     });
-    console.log(usersData);
+    
   };
   return (
-    <div>
+    <>
       <AddUserForm onAddUser={addUserHandler} />
       <UsersList data={usersData} />
-    </div>
+    </>
   );
 }
 
